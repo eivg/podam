@@ -13,7 +13,8 @@ machine:
   hosts:
     circlehost: 127.0.0.1
     dev.mycompany.com: 127.0.0.1
-
+    
+   
   # Add some environment variables
   environment:
     CIRCLE_ENV: test
@@ -25,6 +26,17 @@ checkout:
     - git submodule sync
     - git submodule update --init # use submodules
 
+ubuntu@ip-10-80-156-86:~/node/openhim-core-js$ npm install -g coffee-script
+npm http GET https://registry.npmjs.org/coffee-script
+npm http 304 https://registry.npmjs.org/coffee-script
+npm http GET https://registry.npmjs.org/coffee-script/-/coffee-script-1.8.0.tgz
+npm http 200 https://registry.npmjs.org/coffee-script/-/coffee-script-1.8.0.tgz
+npm http GET https://registry.npmjs.org/mkdirp
+npm http 304 https://registry.npmjs.org/mkdirp
+/home/ubuntu/.nvm/v0.11.13/bin/coffee -> /home/ubuntu/.nvm/v0.11.13/lib/node_modules/coffee-script/bin/coffee
+/home/ubuntu/.nvm/v0.11.13/bin/cake -> /home/ubuntu/.nvm/v0.11.13/lib/node_modules/coffee-script/bin/cake
+coffee-script@1.8.0 /home/ubuntu/.nvm/v0.11.13/lib/node_modules/coffee-script
+└── mkdirp@0.3.5
 
   override:
     - bundle install: # note ':' here
