@@ -27,3 +27,7 @@ branches:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  
+  test:
+  post:
+    - bundle exec rake custom:test:suite
