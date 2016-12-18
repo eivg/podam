@@ -19,6 +19,24 @@
  version:
   - oraclejdk8
   - oraclejdk7
+  
+  checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
+    
+    dependencies:
+  post:
+    - java ./install-packages
+    
+    database:
+  override:
+    - mysql -u ubuntu circle_test < my-database-setup.sql
+    
+    test:
+  override:
+    - php ./test-suite/run.php --unit-tests
+    
 script:
   - mvn clean verify
 branches:
@@ -28,6 +46,6 @@ branches:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   
- dependencies:
-  override:
-    - npm install
+ #dependencies:
+  #override:
+   # - npm install
