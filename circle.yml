@@ -11,11 +11,18 @@
  # - oraclejdk8
   #- oraclejdk7
 
-script:
-  - mvn clean verify
-branches:
-  only:
-    - develop
+#script:
+#  - mvn clean verify
+#branches:
+ # only:
+  #  - develop
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+#after_success:
+ # - bash <(curl -s https://codecov.io/bash)
+test:
+override:
+- tox:
+Removing that fixed the issues
+test:
+override:
+- tox
