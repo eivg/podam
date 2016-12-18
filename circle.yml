@@ -1,9 +1,5 @@
-# Language    
-#  java:
- #   version: openjdk7
-    
-language: java
-jdk:
+java:
+version:  
 - oraclejdk8
 - oraclejdk7
 
