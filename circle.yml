@@ -1,7 +1,16 @@
-language: java
-jdk:
-  - oraclejdk8
-  - oraclejdk7
+# Language    
+  java:
+    version: openjdk7
+    
+    environment:
+    foo: bar
+    baz: 123
+
+#language: java
+#jdk:
+ # - oraclejdk8
+  #- oraclejdk7
+
 script:
   - mvn clean verify
 branches:
