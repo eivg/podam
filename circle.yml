@@ -1,17 +1,29 @@
-machine:
-java:
-version:  oraclejdk8, oraclejdk7
+#machine:
+#java:
+#version:  oraclejdk8, oraclejdk7
 
 #environment:
  #   foo: bar
   
 #  baz: 123
     
+#script:
+ # - mvn clean verify
+#branches:
+ #only:
+  #- develop
+
+ #after_success:
+ #- bash <(curl -s https://codecov.io/bash)
+language: java
+jdk:
+  - oraclejdk8
+  - oraclejdk7
 script:
   - mvn clean verify
 branches:
- only:
-  - develop
+  only:
+    - develop
 
- after_success:
- - bash <(curl -s https://codecov.io/bash)
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
