@@ -4,6 +4,7 @@ jdk:
   - oraclejdk7
 script:
   - mvn clean verify
+  mvn dependency:go-offline
 branches:
   only:
     - develop
