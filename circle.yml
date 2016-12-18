@@ -1,11 +1,11 @@
+machine:
 java:
-version:  
-- oraclejdk8
-- oraclejdk7
+version:  oraclejdk8, oraclejdk7
 
-environment:
-    foo: bar
-    baz: 123
+#environment:
+ #   foo: bar
+  
+#  baz: 123
     
 script:
   - mvn clean verify
