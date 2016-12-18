@@ -1,28 +1,21 @@
 # Language    
-  java:
-    version: openjdk7
+#  java:
+ #   version: openjdk7
     
-    environment:
+language: java
+jdk:
+- oraclejdk8
+- oraclejdk7
+
+environment:
     foo: bar
     baz: 123
+    
+script:
+  - mvn clean verify
+branches:
+ only:
+  - develop
 
-#language: java
-#jdk:
- # - oraclejdk8
-  #- oraclejdk7
-
-#script:
-#  - mvn clean verify
-#branches:
- # only:
-  #  - develop
-
-#after_success:
- # - bash <(curl -s https://codecov.io/bash)
-test:
-override:
-- tox:
-Removing that fixed the issues
-test:
-override:
-- tox
+ after_success:
+ - bash <(curl -s https://codecov.io/bash)
